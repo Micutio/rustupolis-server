@@ -15,8 +15,8 @@ const UDP_SOCKET: Token = Token(0);
 
 #[cfg(not(target_os = "wasi"))]
 pub(crate) fn launch_server(
-    ip_address: &String,
-    port: &String,
+    ip_address: &str,
+    port: &str,
     repository: &Repository,
 ) -> io::Result<()> {
     let mut poll = Poll::new()?;

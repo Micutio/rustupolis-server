@@ -7,16 +7,16 @@ pub enum Protocol {
 
 pub struct Server<'a> {
     protocol: Protocol,
-    ip_address: &'a String,
-    port: &'a String,
+    ip_address: &'a str,
+    port: &'a str,
     repository: &'a Repository,
 }
 
 impl Server<'_> {
     pub fn new<'a>(
         protocol: Protocol,
-        ip_address: &'a String,
-        port: &'a String,
+        ip_address: &'a str,
+        port: &'a str,
         repository: &'a Repository,
     ) -> Server<'a> {
         Server {

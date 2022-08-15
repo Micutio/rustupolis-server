@@ -15,7 +15,11 @@ use std::str::from_utf8;
 const SERVER: Token = Token(0);
 
 #[cfg(not(target_os = "wasi"))]
-pub fn launch_server(ip_address: &str, port: &str, repository: &Repository) -> std::io::Result<()> {
+pub(crate) fn launch_server(
+    ip_address: &str,
+    port: &str,
+    repository: &Repository,
+) -> io::Result<()> {
     let address = format!("{}:{}", ip_address, port);
 
     // Setup the TCP server socket.
